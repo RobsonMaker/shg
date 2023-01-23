@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Relatorio_Consumo" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="6ca1f972-1820-40b7-badc-cb2f02876ff3">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="DataAdapter.xml"/>
+	<property name="com.jaspersoft.studio.data.sql.tables">
+		<![CDATA[YHByb2pldG9fU0dIYC5gaXRlbUNvbnN1bW9gICwxNiw0OSxkY2IyMjE1MS03NmM0LTRkZDYtODdl
+Ni02ODAzOTg1MDViZDE7YHByb2pldG9fU0dIYC5ob3NwZWRhZ2VtICwyMTYsMTUsOTgxZTFlMjct
+Y2IxOC00MjQzLWI4ZDgtZDRkNGRiNTI1OWUzO2Bwcm9qZXRvX1NHSGAucHJvZHV0byAsMzIsMzA4
+LDRmNTY0NmFkLTlmOTUtNDA1OS1hOTY2LTc1YjhlMDg0ZWFlMDs=]]>
+	</property>
+	<queryString>
+		<![CDATA[SELECT `projeto_SGH`.`itemConsumo`.id_hospedagem,
+	`projeto_SGH`.`itemConsumo`.id_produto,
+	`projeto_SGH`.`itemConsumo`.preco,
+	`projeto_SGH`.`itemConsumo`.quantidade,
+	`projeto_SGH`.hospedagem.`PRECO_DIARIA_TOTAL`,
+	`projeto_SGH`.hospedagem.qtd_diaria,
+	`projeto_SGH`.hospedagem.`formaPagamento`,
+	`projeto_SGH`.hospedagem.`dataCheckout`,
+	`projeto_SGH`.produto.nome_produto,
+	`projeto_SGH`.hospedagem.`dataCheckin`
+FROM `projeto_SGH`.`itemConsumo`
+	INNER JOIN `projeto_SGH`.hospedagem ON 
+	 `projeto_SGH`.`itemConsumo`.id_hospedagem = `projeto_SGH`.hospedagem.id_hospedagem 
+	INNER JOIN `projeto_SGH`.produto ON 
+	 `projeto_SGH`.`itemConsumo`.id_produto = `projeto_SGH`.produto.id_produto]]>
+	</queryString>
+	<field name="id_hospedagem" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="id_hospedagem"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="itemConsumo"/>
+		<fieldDescription><![CDATA[hospedagem.hospedagem]]></fieldDescription>
+	</field>
+	<field name="id_produto" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="id_produto"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="itemConsumo"/>
+		<fieldDescription><![CDATA[produto.produto]]></fieldDescription>
+	</field>
+	<field name="preco" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.label" value="preco"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="itemConsumo"/>
+		<fieldDescription><![CDATA[preco]]></fieldDescription>
+	</field>
+	<field name="quantidade" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="quantidade"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="itemConsumo"/>
+		<fieldDescription><![CDATA[quantidade]]></fieldDescription>
+	</field>
+	<field name="PRECO_DIARIA_TOTAL" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.label" value="PRECO_DIARIA_TOTAL"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="hospedagem"/>
+		<fieldDescription><![CDATA[hospedagem.preco_diaria_total]]></fieldDescription>
+	</field>
+	<field name="qtd_diaria" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="qtd_diaria"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="hospedagem"/>
+		<fieldDescription><![CDATA[hospedagem.qtd_diaria]]></fieldDescription>
+	</field>
+	<field name="formaPagamento" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="formaPagamento"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="hospedagem"/>
+		<fieldDescription><![CDATA[hospedagem.formaPagamento]]></fieldDescription>
+	</field>
+	<field name="dataCheckout" class="java.util.Date">
+		<property name="com.jaspersoft.studio.field.label" value="dataCheckout"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="hospedagem"/>
+		<fieldDescription><![CDATA[hospedagem.dataCheckout]]></fieldDescription>
+	</field>
+	<field name="nome_produto" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="nome_produto"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="produto"/>
+		<fieldDescription><![CDATA[produto.nome_produto]]></fieldDescription>
+	</field>
+	<field name="dataCheckin" class="java.util.Date">
+		<property name="com.jaspersoft.studio.field.label" value="dataCheckin"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="hospedagem"/>
+		<fieldDescription><![CDATA[hospedagem.dataCheckin]]></fieldDescription>
+	</field>
+	<variable name="totalParcial" class="java.lang.Double"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="114" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="560" height="30" uuid="248a5e55-7663-40d4-b308-75bdd7e1b1a9"/>
+				<textElement textAlignment="Center">
+					<font size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fechamento da Hospedagem]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="30" width="50" height="20" uuid="44f1bd13-d7fa-4f46-8b5f-e7b64c0e4c53"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Diárias:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="50" y="30" width="50" height="20" uuid="bbcfefbd-18c6-432a-a0b2-ef07935292e6"/>
+				<textFieldExpression><![CDATA[$F{qtd_diaria}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="90" width="90" height="20" uuid="b263320b-8eb4-4efc-9e89-56bf34e4e1a4"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Check-out em: ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="90" y="90" width="100" height="20" uuid="daa8e349-c8bb-4320-b242-b8aca641601a"/>
+				<textFieldExpression><![CDATA[new java.text.SimpleDateFormat("dd/MM/yyyy").format($F{dataCheckout})]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="368" y="60" width="130" height="20" uuid="d9645327-6de8-4382-b7d9-155003147554"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Forma de Pagamento:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="498" y="60" width="51" height="20" uuid="ba4c01a5-b683-4028-8235-1cb371dd937a"/>
+				<textFieldExpression><![CDATA[$F{formaPagamento}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="60" width="90" height="20" uuid="a1f51b17-e9de-4ac9-81b4-65f1ce7db7b4"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Check-in em:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="90" y="60" width="100" height="20" uuid="235f5748-22c7-41f7-9f93-81b70433f420"/>
+				<textFieldExpression><![CDATA[new java.text.SimpleDateFormat("dd/MM/yyyy").format($F{dataCheckin})]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="38" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="0" width="560" height="1" uuid="e1821156-44e4-4fdb-8b4e-c44e92027ed6"/>
+			</line>
+			<staticText>
+				<reportElement x="0" y="10" width="100" height="20" uuid="95a38437-b986-4a2c-8481-58c9be90ebda">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="37c753bd-a332-43fd-8e2b-3ed441320e9f"/>
+				</reportElement>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Produto:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="360" y="10" width="70" height="20" uuid="403b5b14-ac6a-4efd-84ed-2dd6ba867832">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="9f2429c4-6e73-470c-a69d-6cfa2d5836d8"/>
+				</reportElement>
+				<textElement textAlignment="Right">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Quantidade:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="450" y="10" width="100" height="20" uuid="2d2e51af-3a06-4e63-8843-6376862a0a7e">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="cbc086c6-5da2-44d4-8099-134a49ba0afa"/>
+				</reportElement>
+				<textElement textAlignment="Right">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total do Produto:]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="24" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="160" height="20" uuid="59e53c8c-30e8-4d85-80a8-eb6beef3757d">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="37c753bd-a332-43fd-8e2b-3ed441320e9f"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{nome_produto}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="360" y="0" width="70" height="20" uuid="59a50537-1c7d-4213-a686-bef02642f457">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="9f2429c4-6e73-470c-a69d-6cfa2d5836d8"/>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{quantidade}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="520" y="0" width="30" height="19" uuid="465a16e3-c8bb-4956-b02b-296090ce118b">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="9ae2540e-5254-4ede-a2a8-ada5527fa046"/>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{preco}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="498" y="0" width="22" height="19" uuid="2efe6469-d894-4506-8fdb-4bfa147444a9"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[R$:]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="43" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="0" width="560" height="1" uuid="f3104d6f-7483-438e-9460-7c7325cc6e28"/>
+			</line>
+			<staticText>
+				<reportElement x="0" y="10" width="160" height="20" uuid="2be862f4-1e89-4b3d-b5b6-b7b041cd6b3b"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total a pagar]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="30" width="160" height="10" uuid="03be70e3-9a6f-4e00-9595-69c2d8a222fe"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[* Inclui as diarias, serviços e produtos]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="500" y="10" width="45" height="20" uuid="578da11d-d719-46d3-ba28-c224a209d090"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{PRECO_DIARIA_TOTAL}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="480" y="10" width="20" height="20" uuid="8a8aa715-6884-4518-8270-f265d35e2015"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[R$:]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>

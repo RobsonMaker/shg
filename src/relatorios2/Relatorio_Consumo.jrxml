@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.0.final using JasperReports Library version 6.20.0-2bc7ab61c56f459e8176eb05c7705e145cd400ad  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Relatorio_Consumo" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="bbe390e7-d7e7-4272-bbd3-721a06ee3b65">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="DataAdapter.jrdax"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<queryString>
+		<![CDATA[SELECT `projeto_SGH`.`itemConsumo`.quantidade,
+	`projeto_SGH`.`itemConsumo`.preco,
+	`projeto_SGH`.`itemConsumo`.id_hospedagem
+FROM `projeto_SGH`.`itemConsumo`
+	INNER JOIN `projeto_SGH`.produto ON 
+	 `projeto_SGH`.`itemConsumo`.id_produto = `projeto_SGH`.produto.id_produto 
+	INNER JOIN `projeto_SGH`.hospedagem ON 
+	 `projeto_SGH`.`itemConsumo`.id_hospedagem = `projeto_SGH`.hospedagem.id_hospedagem]]>
+	</queryString>
+	<field name="quantidade" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="quantidade"/>
+		<property name="com.jaspersoft.studio.field.label" value="quantidade"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="itemConsumo"/>
+		<fieldDescription><![CDATA[quantidade]]></fieldDescription>
+	</field>
+	<field name="preco" class="java.lang.Float">
+		<property name="com.jaspersoft.studio.field.name" value="preco"/>
+		<property name="com.jaspersoft.studio.field.label" value="preco"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="itemConsumo"/>
+		<fieldDescription><![CDATA[preco]]></fieldDescription>
+	</field>
+	<field name="id_hospedagem" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="id_hospedagem"/>
+		<property name="com.jaspersoft.studio.field.label" value="id_hospedagem"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="itemConsumo"/>
+		<fieldDescription><![CDATA[ItemConsumo.hospedagem.hospedagem]]></fieldDescription>
+	</field>
+	<group name="GroupItemConsumo">
+		<groupExpression><![CDATA[$F{id_hospedagem}]]></groupExpression>
+		<groupHeader>
+			<band height="50">
+				<staticText>
+					<reportElement x="110" y="10" width="100" height="30" uuid="863c4c6c-b371-4a74-971a-39755226beae"/>
+					<text><![CDATA[quantidade]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="227" y="10" width="100" height="30" uuid="59afa885-a229-4ff6-af98-88152751fd07"/>
+					<text><![CDATA[preco]]></text>
+				</staticText>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="50"/>
+		</groupFooter>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<textField>
+				<reportElement x="100" y="0" width="100" height="30" uuid="dff51c57-206e-42f8-a02e-cc7fbe677af2"/>
+				<textFieldExpression><![CDATA[$F{quantidade}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="227" y="0" width="100" height="30" uuid="6d254778-a2f5-4e3a-9810-b5e94d28d323"/>
+				<textFieldExpression><![CDATA[$F{preco}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

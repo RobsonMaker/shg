@@ -1,0 +1,20 @@
+
+
+JDBC URL: jdbc:mysql://localhost:3306/cursojdbc?useTimezone=true&serverTimezone=UTC
+
+
+?useTimezone=true&serverTimezone=UTC //correto, ao final da tua URL
+
+
+
+MySQL Server Properties / Admin Properties
+
+Path/URL to admin tool: /etc/mysql/my.cnf
+
+Path to start command: /usr/bin/mysql
+
+Arguments: /etc/init.d/mysql start
+
+Path to stop command: /usr/bin/mysql
+
+Arguments: /etc/init.d/mysql stop

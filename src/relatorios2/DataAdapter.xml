@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<jdbcDataAdapter class="net.sf.jasperreports.data.jdbc.JdbcDataAdapterImpl">
+  <name>New Data Adapter 1</name>
+  <classpath>/home/moorshk/Downloads/SGH_sistema_gerenciamento_hoteis/SGH_sistema_gerenciamento_hoteis/SGH_sistema_gerenciamento_hoteis/lib/mysql-connector-java-8.0.22.jar</classpath>
+  <driver>com.mysql.jdbc.Driver</driver>
+  <username>root</username>
+  <password>ifsp</password>
+  <url>jdbc:mysql://localhost/projeto_SGH</url>
+  <database></database>
+  <savePassword>true</savePassword>
+  <serverAddress></serverAddress>
+</jdbcDataAdapter>

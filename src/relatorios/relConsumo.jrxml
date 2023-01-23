@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.16.0.final using JasperReports Library version 6.16.0-48579d909b7943b64690c65c71e07e0b80981928  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="relConsumo" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="bbe8bd55-aaa6-4ecf-83ae-7f5e97ca3ebf">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="DataAdapter.xml"/>
+	<property name="com.jaspersoft.studio.data.sql.tables">
+		<![CDATA[cHJvamV0b19zZ2gucHJvZHV0byBBUyAsMTgyLDIwMiwzNjJhMzYwMS1iMmFkLTQ1Y2EtOGRkNS03
+ZDM2OGQyMWZkZjE7cHJvamV0b19zZ2guaG9zcGVkYWdlbSBBUyAsMzQ0LDQsYmYyODdkNzItMDg0
+My00MDIxLWIzYjAtMDk5MzA4YWQ1MDU0O3Byb2pldG9fc2doLml0ZW1jb25zdW1vIEFTICw3Mywy
+NywzNGZjMzM5MC1mODc5LTQwNzQtYmRkYi05ZTMzN2Y2MDkzMTU7]]>
+	</property>
+	<queryString>
+		<![CDATA[SELECT projeto_sgh.itemconsumo.preco,
+	projeto_sgh.itemconsumo.quantidade,
+	projeto_sgh.itemconsumo.id_hospedagem,
+	projeto_sgh.itemconsumo.id_produto,
+	projeto_sgh.produto.nome_produto,
+	projeto_sgh.produto.descricao,
+	projeto_sgh.hospedagem.`dataCheckin`,
+	projeto_sgh.hospedagem.`dataCheckout`,
+	projeto_sgh.hospedagem.qtd_diaria,
+	projeto_sgh.hospedagem.funcionario
+FROM projeto_sgh.itemconsumo
+	INNER JOIN projeto_sgh.hospedagem ON 
+	 projeto_sgh.itemconsumo.id_hospedagem = projeto_sgh.hospedagem.id_hospedagem 
+	INNER JOIN projeto_sgh.produto ON 
+	 projeto_sgh.itemconsumo.id_produto = projeto_sgh.produto.id_produto]]>
+	</queryString>
+	<field name="id_hospedagem" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="id_hospedagem"/>
+		<property name="com.jaspersoft.studio.field.label" value="id_hospedagem"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="itemconsumo"/>
+		<fieldDescription><![CDATA[hospedagem.hospedagem]]></fieldDescription>
+	</field>
+	<field name="preco" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.name" value="preco"/>
+		<property name="com.jaspersoft.studio.field.label" value="preco"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="itemconsumo"/>
+		<fieldDescription><![CDATA[preco]]></fieldDescription>
+	</field>
+	<field name="quantidade" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="quantidade"/>
+		<property name="com.jaspersoft.studio.field.label" value="quantidade"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="itemconsumo"/>
+		<fieldDescription><![CDATA[quantidade]]></fieldDescription>
+	</field>
+	<field name="id_produto" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="id_produto"/>
+		<property name="com.jaspersoft.studio.field.label" value="id_produto"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="itemconsumo"/>
+		<fieldDescription><![CDATA[produto.produto]]></fieldDescription>
+	</field>
+	<field name="nome_produto" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="nome_produto"/>
+		<property name="com.jaspersoft.studio.field.label" value="nome_produto"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="produto"/>
+		<fieldDescription><![CDATA[produto.nome_produto]]></fieldDescription>
+	</field>
+	<field name="descricao" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="descricao"/>
+		<property name="com.jaspersoft.studio.field.label" value="descricao"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="produto"/>
+		<fieldDescription><![CDATA[produto.descricao]]></fieldDescription>
+	</field>
+	<field name="dataCheckin" class="java.util.Date">
+		<property name="com.jaspersoft.studio.field.name" value="dataCheckin"/>
+		<property name="com.jaspersoft.studio.field.label" value="dataCheckin"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="hospedagem"/>
+		<fieldDescription><![CDATA[hospedagem.dataCheckin]]></fieldDescription>
+	</field>
+	<field name="dataCheckout" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.name" value="dataCheckout"/>
+		<property name="com.jaspersoft.studio.field.label" value="dataCheckout"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="hospedagem"/>
+		<fieldDescription><![CDATA[hospedagem.dataCheckout]]></fieldDescription>
+	</field>
+	<field name="qtd_diaria" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="qtd_diaria"/>
+		<property name="com.jaspersoft.studio.field.label" value="qtd_diaria"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="hospedagem"/>
+		<fieldDescription><![CDATA[hospedagem.qtd_diaria]]></fieldDescription>
+	</field>
+	<field name="funcionario" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="funcionario"/>
+		<property name="com.jaspersoft.studio.field.label" value="funcionario"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="hospedagem"/>
+		<fieldDescription><![CDATA[hospedagem.funcionario.nome]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="20" width="100" height="30" uuid="0f99241a-18d3-4518-a9e8-ba6907e78aa5"/>
+				<textFieldExpression><![CDATA[$F{id_hospedagem}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="3" y="0" width="100" height="30" uuid="cea651e8-4111-48f0-84b9-0dd58d7547ba">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ab8aa4d4-482d-450c-91f1-d58510bbf817"/>
+				</reportElement>
+				<text><![CDATA[preco]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="177" y="0" width="100" height="30" uuid="29a0df40-2167-4219-94e7-2cb86dd65e30">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="881221c2-fe32-46b8-a69c-3f2806f8df6b"/>
+				</reportElement>
+				<text><![CDATA[quantidade]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="320" y="0" width="100" height="30" uuid="7884880b-3a1c-40b3-8a96-e6afe11ab7ac">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="1b1719fd-b173-48c3-b4a7-c1d5d01b8b1b"/>
+				</reportElement>
+				<text><![CDATA[nome_produto]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<textField>
+				<reportElement x="3" y="22" width="100" height="30" uuid="cae5501a-ed47-4cd3-950d-db68e16891b5">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ab8aa4d4-482d-450c-91f1-d58510bbf817"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{preco}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="177" y="23" width="100" height="30" uuid="d6d75ff8-59d9-4d4b-8c2d-fe7cec7e09f9">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="881221c2-fe32-46b8-a69c-3f2806f8df6b"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{quantidade}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="320" y="23" width="100" height="30" uuid="7fa3bde5-fe59-4359-bca1-f4d1bc1cc076">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="1b1719fd-b173-48c3-b4a7-c1d5d01b8b1b"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{nome_produto}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
